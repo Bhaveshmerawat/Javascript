@@ -33,18 +33,41 @@ function reverseFunction() {
 
 function updateArray() {
   let arrayData = [{ id: 1, name: 'Foo' }, { id: 2, name: 'Baz' }, { id: 3, name: 'Abc' }];
-  objIndex = arrayData.findIndex((obj => obj.id == arrayData.id));
-  // arrayData[objIndex].mod = "true"
-  obj.arrayData.key = "newkey";
-  console.log(obj.arrayData)
+  var data = arrayData.map((item, index) => {
+    item.mod = 'true';
+    return item;
+  });
+  console.log(data)
 }
 
 // 3rd
-function arrayToString() {
-var arr = [{ key="11", value="1100" }, { key="22", value="2200" }];
-var obj = arr.reduce(function (obj, item) {
-  obj[item.key] = item.value; return obj;
-}, {});
-concole.log(JSON.stringify(obj));
+// function arrayToString() {
+// var arr = [{ key="11", value="1100" }, { key="22", value="2200" }];
+// var obj = arr.reduce(function (obj, item) {
+//   obj[item.key] = item.value; return obj;
+// }, {});
+// concole.log(JSON.stringify(obj));
 
+// }
+
+
+// 4th question
+function arrayToObject(array, key) {
+  var arr = [1, 2, 3, 4];
+  var obj = arr.reduce(function (obj, value) {
+    obj[value] = value;
+    return obj
+  }, {});
+  console.log(obj)
+}
+
+// 5th question
+function checkInput() {
+  var inputVal = document.getElementById("txtbox").value;
+  var myNum = +inputVal;
+  if (isNaN(myNum)) {
+     alert('input is string');
+  } else{
+     alert('input is number');
+  }
 }
